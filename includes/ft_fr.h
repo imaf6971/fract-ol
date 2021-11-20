@@ -6,7 +6,7 @@
 /*   By: erayl <erayl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 16:46:21 by erayl             #+#    #+#             */
-/*   Updated: 2021/11/20 17:59:31 by erayl            ###   ########.fr       */
+/*   Updated: 2021/11/20 18:43:33 by erayl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,7 @@ void		checkmlx(t_mlxdata *data, int mode);
 void		ft_img_pixel_put(const t_mlxdata *data,
 				const t_coord *coord, int color);
 void		img_fill_black(const t_mlxdata *img);
+void		draw_burning_crusade(const t_mlxdata *data, t_position pos);
+int			get_color(int i);
+int			isnt_z_in_set(const t_complex *z);
 #endif

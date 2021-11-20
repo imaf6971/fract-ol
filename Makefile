@@ -20,7 +20,7 @@ HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY = ./srcs/
-SOURCES_LIST = main.c argv_complex.c ft_complex.c ft_julia.c mkh.c mlxutils.c
+SOURCES_LIST = main.c argv_complex.c ft_complex.c drawbc.c drawfractal.c mkh.c mlxutils.c
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
 OBJECTS_DIRECTORY = ./objs/

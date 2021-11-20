@@ -6,7 +6,7 @@
 /*   By: erayl <erayl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:50:14 by erayl             #+#    #+#             */
-/*   Updated: 2021/11/20 17:59:02 by erayl            ###   ########.fr       */
+/*   Updated: 2021/11/20 18:50:33 by erayl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_complex	ft_complexinit(double real, double imaginary)
 	return (complex);
 }
 
-static inline
 int	isnt_z_in_set(const t_complex *z)
 {
 	return ((z->re * z->re + z->im * z->im) > 4);

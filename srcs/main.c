@@ -6,7 +6,7 @@
 /*   By: erayl <erayl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:55:48 by erayl             #+#    #+#             */
-/*   Updated: 2021/11/20 18:08:38 by erayl            ###   ########.fr       */
+/*   Updated: 2021/11/20 18:52:02 by erayl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	ft_fractol(const t_mlxdata *data, const t_position pos)
 		ft_drawjuliatoimg(data, data->c, pos);
 	else if (data->fr_type == 'm')
 		ft_drawmandelbrottoimg(data, pos);
+	else if (data->fr_type == 'b')
+		draw_burning_crusade(data, pos);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img_ptr, 0, 0);
 }
 
@@ -77,20 +79,19 @@ int	main(int argc, char const *argv[])
 {
 	if (argc == 4 && ft_strncmp("Julia", argv[1], 5) == 0)
 		ft_fractolmlx('j', get_complex_for_julia(argv[2], argv[3]));
-	if (argc == 2 && ft_strncmp("Mandelbrot", argv[1], 11) == 0)
+	else if (argc == 2 && ft_strncmp("Mandelbrot", argv[1], 11) == 0)
 		ft_fractolmlx('m', ft_complexinit(0, 0));
-	if (argc == 2 && ft_strncmp("Julia", argv[1], 5) == 0)
-	{
-		printf("here");
+	else if (argc == 2 && ft_strncmp("Julia", argv[1], 5) == 0)
 		ft_fractolmlx('j', ft_complexinit(-0.7, 0.27015));
-	}
+	else if (argc == 2 && ft_strncmp("BC", argv[1], 5) == 0)
+		ft_fractolmlx('b', ft_complexinit(0, 0));
 	else
 	{
 		printf("Invalid arguments!\n");
 		printf("Valid args:\n");
 		printf("\tJulia [re] [im] (re and im is optional)\n");
 		printf("\tMandelbrot\n");
+		printf("\tBC\n");
 	}
-		
 	return (0);
 }
